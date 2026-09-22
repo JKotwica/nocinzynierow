@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Noc Inżynierów 2026</title>
+<style>
+  :root {
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html {
+    scroll-padding-top: env(safe-area-inset-top, 0px);
+  }
+
+  html, body {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif;
+    background: #1b1530;
+    color: #f4f1e4;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  .bg {
+    position: fixed;
+    inset: 0;
+    background-image: url('background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0;
+  }
+
+  .bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(10,7,20,0) 0%,
+      rgba(10,7,20,0) 42%,
+      rgba(10,7,20,0.55) 60%,
+      rgba(10,7,20,0.88) 82%,
+      rgba(8,6,16,0.96) 100%
+    );
+  }
+
+  main {
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 6vh 6vw 3vh;
+    text-align: center;
+  }
+
+  nav.links {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.1rem;
+    padding-bottom: 5rem;
+  }
+
+  nav.links a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.1rem 1.5rem;
+    border-radius: 14px;
+    border: 1px solid rgba(244, 241, 228, 0.22);
+    background: rgba(244, 241, 228, 0.08);
+    backdrop-filter: blur(6px);
+    color: #f4f1e4;
+    text-decoration: none;
+    font-size: 1.05rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  }
+
+  nav.links a:hover,
+  nav.links a:focus-visible {
+    background: rgba(244, 241, 228, 0.16);
+    border-color: rgba(244, 241, 228, 0.45);
+    transform: translateY(-2px);
+  }
+
+  nav.links a:focus-visible {
+    outline: 2px solid #f4f1e4;
+    outline-offset: 3px;
+  }
+
+  nav.links a .arrow {
+    flex: none;
+    opacity: 0.75;
+    transition: transform 0.2s ease;
+  }
+
+  nav.links a:hover .arrow {
+    transform: translateX(4px);
+  }
+
+  footer {
+    position: relative;
+    z-index: 1;
+    padding: 1.6rem 1.5rem calc(1.6rem + env(safe-area-inset-bottom, 0px));
+    text-align: center;
+    font-size: 0.95rem;
+    color: #cdc8de;
+    letter-spacing: 0.01em;
+  }
+
+  footer .names {
+    display: flex;
+    justify-content: center;
+    gap: 0.4rem 1.4rem;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 480px) {
+    nav.links a { font-size: 0.95rem; padding: 1rem 1.2rem; }
+    .spacer { min-height: 40vh; }
+  }
+</style>
+</head>
+<body>
+  <div class="bg"></div>
+  <main>
+    <nav class="links">
+      <a href="https://drive.google.com/drive/folders/1w-LK_hycFqcfl5gpL3EmNjC77QQyaYyz?usp=sharing" target="_blank" rel="noopener noreferrer">
+        <span>Rozpoznawanie obrazów</span>
+        <span class="arrow">→</span>
+      </a>
+      <a href="https://claude.ai/artifact/1eAtPLQukKrY6g3Mv6ECB2" target="_blank" rel="noopener noreferrer">
+        <span>Własna strona internetowa w 15 minut</span>
+        <span class="arrow">→</span>
+      </a>
+      <a href="https://claude.ai/artifact/VVxKCZA18h6y6Low8cGKMb" target="_blank" rel="noopener noreferrer">
+        <span>Automatyzacje</span>
+        <span class="arrow">→</span>
+      </a>
+    </nav>
+  </main>
+
+  <footer>
+    <div class="names">
+      <span>mgr inż. Marcin Bonar</span>
+      <span>mgr inż. Jakub Kotwica</span>
+    </div>
+  </footer>
+</body>
+</html>
